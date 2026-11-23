@@ -1,0 +1,89 @@
+# ============================================================================
+# ESP32-P4 Hardware Target Configuration
+# ============================================================================
+CONFIG_IDF_TARGET="esp32p4"
+CONFIG_ESP32P4_SELECTS_REV_LESS_V3=y
+
+# ============================================================================
+# Flash Configuration (32 MB QIO Mode)
+# ============================================================================
+CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
+CONFIG_ESPTOOLPY_FLASHSIZE_32MB=y
+
+# ============================================================================
+# Partition Table
+# ============================================================================
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+
+# ============================================================================
+# PSRAM Configuration
+# ============================================================================
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_MALLOC_ALWAYSINTERNAL=16384
+CONFIG_SPIRAM_MALLOC_RESERVE_INTERNAL=32768
+CONFIG_SPIRAM_MODE_HEX=y
+CONFIG_SPIRAM_SPEED_200M=y
+CONFIG_SPIRAM_USE_MALLOC=y
+
+# ============================================================================
+# Compiler Optimization (CRITICAL for Performance!)
+# ============================================================================
+CONFIG_COMPILER_OPTIMIZATION_ASSERTIONS_DISABLE=y
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
+CONFIG_ESP_TASK_WDT_TIMEOUT_S=10
+
+# ============================================================================
+# ESP-Hosted Wi-Fi Co-Processor (ESP32-C6 over SDIO)
+# ============================================================================
+CONFIG_ESP_HOSTED=y
+CONFIG_ESP_HOSTED_AUTO_CALL_INIT_BEFORE_APP_MAIN=y
+CONFIG_SLAVE_IDF_TARGET_ESP32C6=y
+CONFIG_ESP_HOSTED_HOST_FEAT_RPC=y
+CONFIG_ESP_HOSTED_HOST_FEAT_RPC_EXT_V2=y
+CONFIG_ESP_HOSTED_HOST_FEAT_SYSTEM=y
+CONFIG_ESP_HOSTED_HOST_FEAT_WIFI=y
+CONFIG_ESP_HOSTED_HOST_TRANSPORT_BUS_SDIO=y
+CONFIG_ESP_HOSTED_SDIO_SLOT_1=y
+CONFIG_ESP_HOSTED_HOST_SDIO_BUS_WIDTH_4=y
+CONFIG_ESP_HOSTED_HOST_SDIO_PIN_CMD=19
+CONFIG_ESP_HOSTED_HOST_SDIO_PIN_CLK=18
+CONFIG_ESP_HOSTED_HOST_SDIO_PIN_D0=14
+CONFIG_ESP_HOSTED_HOST_SDIO_PIN_D1=15
+CONFIG_ESP_HOSTED_HOST_SDIO_PIN_D2=16
+CONFIG_ESP_HOSTED_HOST_SDIO_PIN_D3=17
+CONFIG_ESP_HOSTED_HOST_RESET_GPIO=54
+CONFIG_WIFI_RMT_NVS_ENABLED=n
+
+# ============================================================================
+# FreeRTOS Configuration
+# ============================================================================
+CONFIG_FREERTOS_HZ=1000
+
+# ============================================================================
+# Power Management
+# ============================================================================
+CONFIG_PM_ENABLE=y
+
+# ============================================================================
+# Logging Configuration
+# ============================================================================
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y
+CONFIG_LOG_MAXIMUM_LEVEL_VERBOSE=y
+
+# ============================================================================
+# SD Card / FAT Filesystem
+# ============================================================================
+CONFIG_FATFS_LFN_HEAP=y
+CONFIG_FATFS_MAX_LFN=255
+
+# ============================================================================
+# I2S Configuration
+# ============================================================================
+CONFIG_I2S_ENABLE_DEBUG_LOG=n
+
+# ============================================================================
+# ESP-DSP Optimization (CRITICAL: Enable PIE/SIMD acceleration!)
+# ============================================================================
+CONFIG_DSP_ANSI=n
+CONFIG_DSP_OPTIMIZED=y

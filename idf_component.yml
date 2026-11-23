@@ -1,0 +1,27 @@
+name: "esp-idf-pulsevad"
+version: "1.0.0"
+description: "Compact FP32 voice activity detector for ESP-IDF with 16 kHz mono processing and optional ESPM model loading"
+url: "https://github.com/Strg-Alt-Entf-0x00/esp-idf-pulsevad"
+repository: "https://github.com/Strg-Alt-Entf-0x00/esp-idf-pulsevad.git"
+issues: "https://github.com/Strg-Alt-Entf-0x00/esp-idf-pulsevad/issues"
+license: "PolyForm-Noncommercial-1.0.0"
+targets:
+  - esp32p4
+
+tags:
+  - vad
+  - audio
+  - dsp
+  - voice
+  - speech
+
+dependencies:
+  idf:
+    version: ">=6.0.2"
+
+  esp-idf-model-manager:
+    git: "https://github.com/Strg-Alt-Entf-0x00/esp-idf-model-manager.git"
+    version: "b3f3a07c398de12814e5673a38fdc423a64c1d17"
+  
+  espressif/esp-dsp:
+    version: "^1.8.2"

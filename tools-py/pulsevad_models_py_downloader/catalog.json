@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "project_id": "pulsevad",
+  "artifacts": [
+    {
+      "id": "pulsevad-python-models",
+      "destination": ".",
+      "source": {
+        "provider": "pypi_package",
+        "package": "pulsevad",
+        "version": "0.1.3",
+        "wheel_sha256": "0f651878ecaf9a6f42cc3adde57756c102759ac090006c007271859218ba39db",
+        "files": [
+          {
+            "id": "pulsevad-student-pth",
+            "default": true,
+            "path": "pulsevad/data/pulsevad_2.1k.pth",
+            "destination": "pulsevad_2.1k/pulsevad_2.1k.pth",
+            "sha256": "37f3ff5db87e6e2f2beec9a31e05e7b0d7b7b48030d7c93365d094e661a6f4b6"
+          },
+          {
+            "id": "pulsevad-student-onnx",
+            "default": false,
+            "path": "pulsevad/data/pulsevad_2.1k.onnx",
+            "destination": "pulsevad_2.1k/pulsevad_2.1k.onnx",
+            "sha256": "2b8c4874fc4ecd64916fc8726e2a8281b1cb9457c21f42a23a9776a4d538c665"
+          },
+          {
+            "id": "pulsevad-student-int8-onnx",
+            "default": false,
+            "path": "pulsevad/data/pulsevad_2.1k_int8.onnx",
+            "destination": "pulsevad_2.1k/pulsevad_2.1k_int8.onnx",
+            "sha256": "416061347a1e723ed15163acd51006bf3c513b27bb9f57d85e2c694cc44b8389"
+          },
+          {
+            "id": "pulsevad-teacher-pth",
+            "default": true,
+            "path": "pulsevad/data/pulsevad_teacher_81k.pth",
+            "destination": "pulsevad_teacher_81k/pulsevad_teacher_81k.pth",
+            "sha256": "85aa10563883373c5cd794d253001ec52d682817ccd33f092c7dc254cee2b9fd"
+          },
+          {
+            "id": "pulsevad-teacher-onnx",
+            "default": false,
+            "path": "pulsevad/data/pulsevad_teacher_81k.onnx",
+            "destination": "pulsevad_teacher_81k/pulsevad_teacher_81k.onnx",
+            "sha256": "24d81c0d542916f0657b612a3098970f29fa95e8193867dac229ccd7fe007d80"
+          },
+          {
+            "id": "pulsevad-mel-filterbank",
+            "default": true,
+            "path": "pulsevad/data/mel_filterbank.npy",
+            "destination": "mel_filterbank.npy",
+            "sha256": "6db831a2412a81992e6a67e2aa4a0a256722decd1ee09cb39bd933de8cbd34ab"
+          }
+        ]
+      }
+    }
+  ]
+}

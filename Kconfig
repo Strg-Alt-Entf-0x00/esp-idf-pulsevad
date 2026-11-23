@@ -1,0 +1,26 @@
+menu "ESP PulseVAD Configuration"
+
+    config PULSEVAD_DEFAULT_THRESHOLD
+        string "Default speech detection probability threshold"
+        default "0.50"
+        help
+            Threshold above which an audio frame is classified as speech (0.0 to 1.0).
+            Default is 0.50. Lower values (e.g. 0.35) increase sensitivity;
+            higher values (e.g. 0.65) suppress noisy backgrounds and music false alarms.
+
+    config PULSEVAD_ENABLE_BENCHMARK_LOGS
+        bool "Enable inference latency benchmarking logs"
+        default n
+        help
+            Prints execution time (frontend FFT + neural network inference)
+            for each processed 200 ms audio chunk in microseconds via ESP_LOGI.
+
+    config PULSEVAD_FAST_SIGMOID
+        bool "Use fast algebraic sigmoid approximation"
+        default n
+        help
+            Replaces standard math expf() with a fast branchless rational approximation:
+            sigmoid(x) approx 0.5 + 0.5 * (x / (1 + |x|)).
+            Saves several dozen CPU cycles with negligible precision difference.
+
+endmenu
