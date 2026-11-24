@@ -14,7 +14,7 @@ Directly loads PyTorch checkpoints from models/py/, extracts:
 Outputs:
 - Private C header: src/pulsevad_model_data.h (built-in 2.1k ROM fallback)
 - Native ESPM files: models/espm/
-- Debug JSON: tools-py/pulsevad_models_converter/pulsevad_model_debug.json
+- Debug JSON: .data/debug/pulsevad_model_debug.json
 
 Usage:
     python tools-py/pulsevad_models_converter/pulsevad_convert_models.py
@@ -49,7 +49,7 @@ DEFAULT_MEL_FB = PROJECT_ROOT / "models" / "py" / "mel_filterbank.npy"
 
 # Target outputs
 OUTPUT_HEADER = PROJECT_ROOT / "src" / "pulsevad_model_data.h"
-OUTPUT_DEBUG_JSON = SCRIPT_DIR / "pulsevad_model_debug.json"
+OUTPUT_DEBUG_JSON = PROJECT_ROOT / ".data" / "debug" / "pulsevad_model_debug.json"
 
 ESPM_OUTPUT_DIR = (
     PROJECT_ROOT
